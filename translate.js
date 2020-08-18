@@ -7,6 +7,7 @@ const appendPopover = (x, y, result) => {
     document.body.appendChild(popover)
     document.addEventListener('mousedown', () => {
         document.body.removeChild(popover)
+        document.getSelection().removeAllRanges()
     }, { once: true })
 }
 
