@@ -1,13 +1,14 @@
 const appendPopover = (x, y, result) => {
     const popover = document.createElement('div')
-    popover.className = 'container'
+    popover.className = 'container-3d5d8f8a556f'
     popover.innerText = result
     popover.style.left = x + 'px'
     popover.style.top = y + 'px'
     document.body.appendChild(popover)
     document.addEventListener('mousedown', () => {
         document.body.removeChild(popover)
-    })
+        document.getSelection().removeAllRanges()
+    }, { once: true })
 }
 
 const requestTranslate = async text => {
@@ -35,10 +36,10 @@ const requestTranslate = async text => {
 }
 
 document.addEventListener('mouseup', async event => {
-    const x = event.pageX
-    const y = event.pageY
     const selectedText = document.getSelection().toString()
     if (selectedText) {
+        const x = event.pageX
+        const y = event.pageY
         const result = await requestTranslate(selectedText)
         if (result) appendPopover(x, y, result)
     }
