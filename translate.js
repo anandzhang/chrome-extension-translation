@@ -7,7 +7,7 @@ const appendPopover = (x, y, result) => {
     document.body.appendChild(popover)
     document.addEventListener('mousedown', () => {
         document.body.removeChild(popover)
-    })
+    }, { once: true })
 }
 
 const requestTranslate = async text => {
@@ -35,10 +35,10 @@ const requestTranslate = async text => {
 }
 
 document.addEventListener('mouseup', async event => {
-    const x = event.pageX
-    const y = event.pageY
     const selectedText = document.getSelection().toString()
     if (selectedText) {
+        const x = event.pageX
+        const y = event.pageY
         const result = await requestTranslate(selectedText)
         if (result) appendPopover(x, y, result)
     }
