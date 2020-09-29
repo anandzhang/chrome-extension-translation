@@ -9,3 +9,6 @@ https://urlc.cn/pDh2H3 点击下载压缩包，或者直接克隆项目。
 
 ![Tutorials](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/master/screenshots/tutorials.png)
 
+## Example
+
+![Example](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/master/screenshots/example.png)
