@@ -1,13 +1,25 @@
-const appendPopover = (x, y, result) => {
-    const popover = document.createElement('div')
-    popover.className = 'container-3d5d8f8a556f'
-    popover.innerText = result
-    popover.style.left = x + 'px'
-    popover.style.top = y + 'px'
-    document.body.appendChild(popover)
+const selection = document.getSelection()
+document.addEventListener('mouseup', async () => {
+    const selectedText = selection.toString().trim()
+    if (selectedText) {
+        const rangeRect = selection.getRangeAt(0).getBoundingClientRect()
+        const x = rangeRect.left
+        const y = rangeRect.bottom + document.scrollingElement.scrollTop
+        const result = await requestTranslate(selectedText)
+        if (result) appendBubble(x, y, result)
+    }
+})
+
+const appendBubble = (x, y, result) => {
+    const bubble = document.createElement('div')
+    bubble.className = 'container-3d5d8f8a556f'
+    bubble.style.left = x + 'px'
+    bubble.style.top = y + 'px'
+    bubble.innerText = result
+    document.body.appendChild(bubble)
     document.addEventListener('mousedown', () => {
-        document.body.removeChild(popover)
-        document.getSelection().removeAllRanges()
+        document.body.removeChild(bubble)
+        selection.removeAllRanges()
     }, { once: true })
 }
 
@@ -34,13 +46,3 @@ const requestTranslate = async text => {
         console.error(err)
     }
 }
-
-document.addEventListener('mouseup', async event => {
-    const selectedText = document.getSelection().toString()
-    if (selectedText) {
-        const x = event.pageX
-        const y = event.pageY
-        const result = await requestTranslate(selectedText)
-        if (result) appendPopover(x, y, result)
-    }
-})

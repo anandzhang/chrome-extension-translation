@@ -25,8 +25,8 @@
             "matches": [
                 "<all_urls>"
             ],
-            "css":[
-                "stylesheets/translatePopover.css"
+            "css": [
+                "stylesheets/translateBubble.css"
             ],
             "js": [
                 "translate.js"
