@@ -1,7 +1,7 @@
 const selection = document.getSelection()
 document.addEventListener('mouseup', async () => {
     const selectedText = selection.toString().trim()
-    if (selectedText) {
+    if (/[a-z]/i.test(selectedText)) {
         const rangeRect = selection.getRangeAt(0).getBoundingClientRect()
         const x = rangeRect.left
         const y = rangeRect.bottom + document.scrollingElement.scrollTop
