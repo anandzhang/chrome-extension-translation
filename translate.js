@@ -1,5 +1,12 @@
+const EXCLUDE_NODE_NAMES = [
+    'FORM',
+    'INPUT',
+    'TEXTAREA',
+]
+
 const selection = document.getSelection()
 document.addEventListener('mouseup', async () => {
+    if (EXCLUDE_NODE_NAMES.includes(selection.anchorNode?.nodeName)) return;
     const selectedText = selection.toString().trim()
     if (/[a-z]/i.test(selectedText)) {
         const rangeRect = selection.getRangeAt(0).getBoundingClientRect()
