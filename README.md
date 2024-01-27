@@ -3,12 +3,21 @@ A chrome browser translation extension.
 
 ## Usage
 
-https://urlc.cn/pDh2H3 点击下载压缩包，或者直接克隆项目。
+您可以直接下载项目 `zip` 压缩包，或者进行克隆。
 
-解压之后，进入扩展程序管理界面 [chrome://extensions/](chrome://extensions/) ，然后打开开发者模式，接着加载解压后的文件夹。
+![Download](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/main/screenshots/download.png)
 
-![Tutorials](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/master/screenshots/tutorials.png)
+解压之后（仅 zip 包需要），进入扩展程序管理界面 [chrome://extensions/](chrome://extensions/) ，然后打开开发者模式，接着加载解压后的文件夹。
+
+![Tutorials](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/main/screenshots/tutorials.png)
 
 ## Example
 
-![Example](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/master/screenshots/example.png)
+![Example](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/main/screenshots/example.png)
+
+## Upgrade
+
+![Upgrade](https://raw.githubusercontent.com/anandzhang/chrome-extension-translation/main/screenshots/upgrade.png)
+
+您可以通过重新 下载 或 `git pull` 拉取最新插件，然后通过管理界面  [chrome://extensions/](chrome://extensions/) 重新加载，如上图。
+
